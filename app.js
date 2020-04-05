@@ -8,7 +8,11 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
 let app = express();
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/node-demo");
 let argenpropScrapper = require('./argenprop/argenprop-scrapper');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
